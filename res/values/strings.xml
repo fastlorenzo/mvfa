@@ -41,6 +41,8 @@
 	<string
 		name="settings_select_msisdn">Number %s will be used.</string>
 	<string
+		name="update_msisdns">Update MSISDN List</string>
+	<string
 		name="widget_action">Widget tap action</string>
 	<string
 		name="settings_widget_action">%s when the widget is tapped.</string>
@@ -68,6 +70,9 @@
 		name="login_title">Login to Mobile Vikings</string>
 	<string
 		name="exception_message">Could not connect. Make sure your internet connection is working and your credentials are correct. [error: %s]
+	</string>
+	<string
+		name="exception_msisdn_message">Phone number not set. You must select a phone number in the settings.
 	</string>
 
 </resources>

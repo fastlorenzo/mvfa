@@ -28,7 +28,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
-import be.benvd.mvforandroid.R;
+import be.bernardi.mvforandroid.R;
 
 /**
  * 

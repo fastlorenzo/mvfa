@@ -42,7 +42,7 @@ import android.app.ActivityGroup;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import be.benvd.mvforandroid.R;
+import be.bernardi.mvforandroid.R;
 
 /**
  * An activity that contains and runs multiple embedded activities or views.

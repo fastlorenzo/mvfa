@@ -54,7 +54,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import be.benvd.mvforandroid.R;
+import be.bernardi.mvforandroid.R;
 
 /**
  * Container for a tabbed window view. This object holds two children: a set of

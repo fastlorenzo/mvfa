@@ -67,7 +67,9 @@
 	<string
 		name="login_title">Connectez-vous à Mobile Vikings</string>
 	<string
-		name="exception_message">Impossible de se connecter. Vérifiez que votre connexion fonctionne et que vos identifiants sont corrects.
-		[erreur: %s]</string>
-
+		name="exception_message">Impossible de se connecter. Vérifiez que votre connexion fonctionne et que vos identifiants sont corrects. [erreur: %s]
+	</string>
+	<string
+		name="exception_msisdn_message">Aucun numéro de téléphone sélectionné. Sélectionnez un numéro dans les options.
+	</string>
 </resources>
