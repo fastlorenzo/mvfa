@@ -125,7 +125,7 @@ public class MVDataService extends WakefulIntentService
 		{
 		long delay = Long.parseLong(prefs.getString("update_frequency", "86400000"));
 		alarm.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + delay, wakefulWorkIntent);
-		Log.v(MVDataService.class.getSimpleName(), "Update scheduled in " + delay + "ms");
+		Log.i(MVDataService.class.getSimpleName(), "Update scheduled in " + delay + "ms");
 		}
 
 	@Override
@@ -169,7 +169,7 @@ public class MVDataService extends WakefulIntentService
 				}
 			else if(action.equals(STOP_SERVICE))
 				{
-				Log.v(MVDataService.class.getSimpleName(), "Update canceled");
+				Log.i(MVDataService.class.getSimpleName(), "Update canceled");
 				alarm.cancel(wakefulWorkIntent);
 				stopSelf();
 				}
@@ -196,7 +196,7 @@ public class MVDataService extends WakefulIntentService
 			{
 			exceptionBroadcast.putExtra(MSISDN_EXCEPTION, e);
 			sendBroadcast(msisdnExceptionBroadcast);
-			Log.e("MVFA", "No MSISDN set", e);
+			Log.w("MVFA", "No MSISDN set", e);
 			}
 		}
 
@@ -222,7 +222,7 @@ public class MVDataService extends WakefulIntentService
 			}
 		edit.putFloat(MVDataHelper.PRICE_PLAN_TOPUP_AMOUNT, Float.parseFloat(json.getString("top_up_amount")));
 		edit.commit();
-		Log.v(MVDataService.class.getSimpleName(), "Updated price plan");
+		Log.i(MVDataService.class.getSimpleName(), "Updated price plan");
 		}
 	
 	public String[] getMsisdnList() throws JSONException, IOException
@@ -237,24 +237,24 @@ public class MVDataService extends WakefulIntentService
 		for(int i = 0; i < jsonArray.length(); i++)
 			{
 			msisdns[i] = jsonArray.getString(i);
-			Log.v(MVDataService.class.getSimpleName(),"MSISDN:"+jsonArray.getString(i));
+			Log.i(MVDataService.class.getSimpleName(),"MSISDN:"+jsonArray.getString(i));
 			}
-		Log.v(MVDataService.class.getSimpleName(), "Getting MSISDN list");
+	//	Log.v(MVDataService.class.getSimpleName(), "Getting MSISDN list");
 		helper.msisdns.getMsisdnList();
 		return msisdns;
 		}
 	
 	public void updateMsisdns() throws JSONException, IOException
 		{
-		Log.v(MVDataService.class.getSimpleName(), "Start updateMsisdns()");
+//		Log.v(MVDataService.class.getSimpleName(), "Start updateMsisdns()");
 		prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		String username = prefs.getString("username", null);
 		String password = prefs.getString("password", null);
-		Log.v(MVDataService.class.getSimpleName(), "username:"+username);
-		Log.v(MVDataService.class.getSimpleName(), "password:"+password);
+//		Log.v(MVDataService.class.getSimpleName(), "username:"+username);
+//		Log.v(MVDataService.class.getSimpleName(), "password:"+password);
 		String response = MVDataHelper.getResponse(username, password, URL_MSISDN);
 		JSONArray jsonArray = new JSONArray(response);
-		Log.v(MVDataService.class.getSimpleName(), "Updating MSISDN list");
+		Log.i(MVDataService.class.getSimpleName(), "Updating MSISDN list");
 		helper.msisdns.update(jsonArray);
 		}
 
@@ -271,7 +271,7 @@ public class MVDataService extends WakefulIntentService
 		else
 			helper.credit.update(new JSONObject(response),false);
 		sendBroadcast(creditBroadcast);
-		Log.v(MVDataService.class.getSimpleName(), "Updated credit");
+		Log.i(MVDataService.class.getSimpleName(), "Updated credit");
 		}
 
 	private void updateUsage() throws IOException, JSONException, NoMsisdnException
@@ -297,7 +297,7 @@ public class MVDataService extends WakefulIntentService
 		String response = MVDataHelper.getResponse(username, password, url);
 		helper.usage.update(new JSONArray(response));
 		sendBroadcast(usageBroadcast);
-		Log.v(MVDataService.class.getSimpleName(), "Updated usage");
+		Log.i(MVDataService.class.getSimpleName(), "Updated usage");
 		}
 
 	private void updateTopups() throws IOException, JSONException, NoMsisdnException
@@ -309,7 +309,7 @@ public class MVDataService extends WakefulIntentService
 		String response = MVDataHelper.getResponse(username, password, URL_TOPUPS+"?msisdn="+prefs.getString("select_msisdn", null));
 		helper.topups.update(new JSONArray(response), false);
 		sendBroadcast(topupsBroadcast);
-		Log.v(MVDataService.class.getSimpleName(), "Updated topups");
+		Log.i(MVDataService.class.getSimpleName(), "Updated topups");
 		}
 
 	}

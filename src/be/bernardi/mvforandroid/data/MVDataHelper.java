@@ -48,8 +48,8 @@ public class MVDataHelper
 	 */
 	public static String getResponse(String username, String password, String url) throws IOException
 		{
-		Log.v(MVDataHelper.class.getSimpleName(),"url:"+url);
-		Log.v(MVDataHelper.class.getSimpleName(),"username:"+username+"|password:"+password);
+	//	Log.v(MVDataHelper.class.getSimpleName(),"url:"+url);
+	//	Log.v(MVDataHelper.class.getSimpleName(),"username:"+username+"|password:"+password);
 		DefaultHttpClient httpclient = new DefaultHttpClient();
 		Credentials creds = new UsernamePasswordCredentials(username, password);
 		httpclient.getCredentialsProvider().setCredentials(new AuthScope(null, -1), creds);
