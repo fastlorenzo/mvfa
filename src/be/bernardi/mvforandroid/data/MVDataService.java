@@ -204,7 +204,7 @@ public class MVDataService extends WakefulIntentService
 		{
 		String username = prefs.getString("username", null);
 		String password = prefs.getString("password", null);
-		if(prefs.getString("select_msisdn", null)==null)
+		if(prefs.getString("select_msisdn", "none").equals("none"))
 			throw new NoMsisdnException();
 		String response = MVDataHelper.getResponse(username, password, URL_PRICE_PLAN+"?msisdn="+prefs.getString("select_msisdn", null));
 		JSONObject json = new JSONObject(response);
@@ -263,7 +263,7 @@ public class MVDataService extends WakefulIntentService
 		updatePricePlan();
 		String username = prefs.getString("username", null);
 		String password = prefs.getString("password", null);
-		if(prefs.getString("select_msisdn", null)==null)
+		if(prefs.getString("select_msisdn", "none").equals("none"))
 			throw new NoMsisdnException();
 		String response = MVDataHelper.getResponse(username, password, URL_CREDIT+"&msisdn="+prefs.getString("select_msisdn", null));
 		if(price_plan.equals("Data"))
@@ -283,7 +283,7 @@ public class MVDataService extends WakefulIntentService
 		{
 		String username = prefs.getString("username", null);
 		String password = prefs.getString("password", null);
-		if(prefs.getString("select_msisdn", null)==null)
+		if(prefs.getString("select_msisdn", "none").equals("none"))
 			throw new NoMsisdnException();
 		String url = URL_USAGE+"?msisdn="+prefs.getString("select_msisdn", null);
 		if(starttime != 0 && endtime != 0)
@@ -304,7 +304,7 @@ public class MVDataService extends WakefulIntentService
 		{
 		String username = prefs.getString("username", null);
 		String password = prefs.getString("password", null);
-		if(prefs.getString("select_msisdn", null)==null)
+		if(prefs.getString("select_msisdn", "none").equals("none"))
 			throw new NoMsisdnException();
 		String response = MVDataHelper.getResponse(username, password, URL_TOPUPS+"?msisdn="+prefs.getString("select_msisdn", null));
 		helper.topups.update(new JSONArray(response), false);

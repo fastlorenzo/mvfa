@@ -55,7 +55,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 		addPreferencesFromResource(R.xml.settings);
 		
 		findPreferences();
-		setMsisdns(selectMsisdnPreference = (ListPreference) getPreferenceScreen().findPreference("select_msisdn"));
+		setMsisdns(selectMsisdnPreference);
 
 		updatePreferences();
 		}
@@ -148,6 +148,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 		updateFrequencyPreference = getPreferenceScreen().findPreference("update_frequency");
 		widgetActionPreference = getPreferenceScreen().findPreference(WIDGET_ACTION);
 		selectMsisdnPreference = (ListPreference) getPreferenceScreen().findPreference("select_msisdn");
+		selectMsisdnPreference = (ListPreference) getPreferenceScreen().findPreference("select_msisdn");
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		String[] msisdns = new String[1];
 		msisdns[0] = prefs.getString("select_msisdn", "none");
@@ -229,15 +230,18 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 		DatabaseHelper helper = new DatabaseHelper(this);
 		String[] msisdns;
 		msisdns = helper.msisdns.getMsisdnList();
-		Log.v(MVDataService.class.getSimpleName(), ""+msisdns.length);
-		int size = msisdns.length;
-		do
+		if(msisdns!=null)
 			{
-			Log.v(MVDataService.class.getSimpleName(), "msisdn:"+msisdns[size-1]+"size:"+size);
-			size--;
-			} while(size>0);
-		preference.setEntries(msisdns);
-		preference.setEntryValues(msisdns);
+			Log.v(MVDataService.class.getSimpleName(), ""+msisdns.length);
+			int size = msisdns.length;
+			do
+				{
+				Log.v(MVDataService.class.getSimpleName(), "msisdn:"+msisdns[size-1]+"size:"+size);
+				size--;
+				} while(size>0);
+			preference.setEntries(msisdns);
+			preference.setEntryValues(msisdns);
+			}
 		helper.close();
 		}
 	

@@ -169,8 +169,8 @@ public class MainActivity extends TabActivity
 		stringBuilder.append(getVersionName());
 		stringBuilder.append("\n\n");
 		stringBuilder.append("http://github.com/fastlorenzo/mvfa\n");
-		stringBuilder.append("zio@djzio.be\n");
-		stringBuilder.append("http://github.com/benvd/mvfa\n");
+		stringBuilder.append("zio@djzio.be\n@fastlorenzo\n\n");
+		stringBuilder.append("Original application by:\n");
 		stringBuilder.append("@benvandaele\nvandaeleben@gmail.com\n\n");
 
 
@@ -181,6 +181,11 @@ public class MainActivity extends TabActivity
 		int twitterEnd = twitterStart + "@benvandaele".length();
 		message.setSpan(new URLSpan("http://twitter.com/benvandaele"), twitterStart, twitterEnd, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
+		int twitterStartz = stringBuilder.toString().indexOf("@fastlorenzo");
+		int twitterEndz = twitterStart + "@fastlorenzo".length();
+		message.setSpan(new URLSpan("http://twitter.com/fastlorenzo"), twitterStartz, twitterEndz, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+		
 		return message;
 		}
 
