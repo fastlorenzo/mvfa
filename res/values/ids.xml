@@ -1,0 +1,6 @@
+<resources>
+
+    <item name="actionbar_compat_item_refresh_progress" type="id"/>
+    <item name="actionbar_compat_item_refresh" type="id"/>
+
+</resources>

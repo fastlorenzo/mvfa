@@ -1,0 +1,38 @@
+<resources>
+
+    <style name="AppTheme" parent="@style/Theme.Sherlock">
+        <item name="android:windowTitleSize">@dimen/actionbar_compat_height</item>
+        <item name="android:windowTitleBackgroundStyle">@style/MainPages</item>
+        <item name="android:windowContentOverlay">@drawable/actionbar_shadow</item>
+        <item name="abBackground">@color/dark</item>
+        <item name="actionBarTabTextStyle">@style/TabTextLight</item>
+        <item name="actionBarTabStyle">@style/TabRedLight</item>
+    </style>
+
+    <style name="TabRed" parent="Widget.Sherlock.ActionBar.TabView">
+        <item name="android:background">@drawable/red_tab_indicator_holo</item>
+    </style>
+
+    <style name="TabRedLight" parent="Widget.Sherlock.ActionBar.TabView">
+        <item name="android:background">@drawable/red_light_tab_indicator_holo</item>
+    </style>
+
+    <style name="TabTextRed">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TabTextLight">
+        <item name="android:textColor">@color/light</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="MainPages">
+        <item name="android:background">@color/light</item>
+    </style>
+
+    <style name="LinearLayout">
+        <item name="android:background">@color/dark</item>
+    </style>
+
+</resources>

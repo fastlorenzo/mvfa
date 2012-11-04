@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="ActionBarTitle" parent="android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+</resources>

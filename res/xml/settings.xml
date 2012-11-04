@@ -1,75 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-	xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-	<PreferenceCategory	android:title="@string/credentials" >
-		<EditTextPreference
-			android:key="username"
-			android:title="@string/username" />
-	
-		<EditTextPreference
-			android:key="password"
-			android:title="@string/password"
-			android:password="true" />
-	</PreferenceCategory>
+    <PreferenceCategory android:title="@string/credentials" >
+        <be.bernardi.mvforandroid.beta.dialogs.DeleteCredentialsDialog
+            android:dialogMessage="@string/delete_credentials_confirm"
+            android:dialogTitle="@string/delete_credentials"
+            android:key="delete_credentials"
+            android:title="@string/delete_credentials" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="MSISDN" >
+        <ListPreference
+            android:entries="@array/select_msisdn"
+            android:entryValues="@array/select_msisdn_values"
+            android:key="select_msisdn"
+            android:title="@string/select_msisdn" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Widget" >
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/widget_actions"
+            android:entryValues="@array/widget_actions_values"
+            android:key="widget_action"
+            android:title="@string/widget_action" />
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/widget_background"
+            android:entryValues="@array/widget_background_values"
+            android:key="widget_background"
+            android:title="@string/widget_background" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/auto_update" >
+        <ListPreference
+            android:defaultValue="86400000"
+            android:entries="@array/update_frequency_entries"
+            android:entryValues="@array/update_frequency_values"
+            android:key="update_frequency"
+            android:title="@string/auto_update_frequency" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="auto_credit"
+            android:summaryOff="@string/pref_auto_credit_disabled"
+            android:summaryOn="@string/pref_auto_credit_enabled"
+            android:title="@string/pref_auto_credit" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="auto_usage"
+            android:summaryOff="@string/pref_auto_usage_disabled"
+            android:summaryOn="@string/pref_auto_usage_enabled"
+            android:title="@string/pref_auto_usage" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="auto_topups"
+            android:summaryOff="@string/pref_auto_topups_disabled"
+            android:summaryOn="@string/pref_auto_topups_enabled"
+            android:title="@string/pref_auto_topups" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settings_other" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="set_debug"
+            android:summaryOff="@string/pref_debugging_disabled"
+            android:summaryOn="@string/pref_debugging_enabled"
+            android:title="@string/pref_debugging" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="acra.enable"
+            android:summaryOff="@string/pref_acra_disabled"
+            android:summaryOn="@string/pref_acra_enabled"
+            android:title="@string/pref_disable_acra" />
 
-	<PreferenceCategory android:title="MSISDN" >
-		<ListPreference
-			android:title="@string/select_msisdn"
-			android:key="select_msisdn"
-			android:defaultValue="none"
-			android:entries="@array/select_msisdn"
-			android:entryValues="@array/select_msisdn_values" />
-	</PreferenceCategory>
-		
+        <EditTextPreference
+            android:key="acra.user.email"
+            android:summary="@string/pref_acra_user_email_summary"
+            android:title="@string/pref_acra_user_email" />
+    </PreferenceCategory>
 
-	<PreferenceCategory	android:title="Widget" >
-		<ListPreference
-			android:title="@string/widget_action"
-			android:key="widget_action"
-			android:defaultValue="0"
-			android:entries="@array/widget_actions"
-			android:entryValues="@array/widget_actions_values" />
-		<ListPreference
-			android:title="@string/widget_background"
-			android:key="widget_background"
-			android:defaultValue="0"
-			android:entries="@array/widget_background"
-			android:entryValues="@array/widget_background_values" />
-	</PreferenceCategory>
-	
-	<PreferenceCategory	android:title="@string/auto_update" >
-		<ListPreference
-			android:title="@string/auto_update_frequency"
-			android:key="update_frequency"
-			android:defaultValue="86400000"
-			android:entries="@array/update_frequency_entries"
-			android:entryValues="@array/update_frequency_values" />
-	
-		<CheckBoxPreference
-			android:key="auto_credit"
-			android:title="@string/credit"
-			android:summary="@string/settings_auto_credit_disabled"
-			android:defaultValue="false" />
-	
-		<CheckBoxPreference
-			android:key="auto_usage"
-			android:title="@string/usage"
-			android:summary="@string/settings_auto_usage_disabled"
-			android:defaultValue="false" />
-	
-		<CheckBoxPreference
-			android:key="auto_topups"
-			android:title="@string/topups"
-			android:summary="@string/settings_auto_topups_disabled"
-			android:defaultValue="false" />
-	</PreferenceCategory>
-	
-	<PreferenceCategory	android:title="@string/settings_other" >    
-		<CheckBoxPreference
-			android:key="set_debug"
-			android:title="@string/debug"
-			android:summary="@string/settings_set_debug_disabled"
-			android:defaultValue="false" />
-	</PreferenceCategory>
 </PreferenceScreen>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/newcredit_credit_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/credit_credit"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/dark"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/newcredit_sms_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newcredit_credit_text"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/credit_sms"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/dark"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/newcredit_smsson_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newcredit_sms_text"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/credit_sms"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/dark"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/newcredit_data_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newcredit_smsson_text"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/credit_data"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/dark"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/newcredit_expiration_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/newcredit_data_text"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/light"
+        android:textSize="15dp" />
+
+</RelativeLayout>
